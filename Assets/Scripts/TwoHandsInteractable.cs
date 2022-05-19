@@ -54,12 +54,12 @@ public class TwoHandsInteractable : XRGrabInteractable
     protected override void OnSelectEntered(XRBaseInteractor interactor)
     {
         base.OnSelectEntered(interactor);
-        initialRotation = interactor.transform.rotation;
+        initialRotation = interactor.attachTransform.rotation;
     }
 
     protected override void OnSelectExited(XRBaseInteractor interactor)
     {
         base.OnSelectExited(interactor);
-        interactor.transform.rotation = initialRotation;
+        interactor.attachTransform.rotation = initialRotation;
     }
 }
