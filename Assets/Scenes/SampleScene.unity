@@ -1998,6 +1998,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1214318010 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 7724850173025507951, guid: 6d9ee609d9f49fc489754751feaba91e, type: 3}
+  m_PrefabInstance: {fileID: 2009508714}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1534241684 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4258794076796366098, guid: 6d9ee609d9f49fc489754751feaba91e, type: 3}
+  m_PrefabInstance: {fileID: 2009508714}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1653935228
 GameObject:
   m_ObjectHideFlags: 0
@@ -2606,7 +2622,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 1214318010}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -2708,3 +2725,4 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+  secondGrabPoint: {fileID: 1534241684}
