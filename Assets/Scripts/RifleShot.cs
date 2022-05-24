@@ -21,5 +21,12 @@ public class RifleShot : MonoBehaviour
     {
         GameObject bala = Instantiate(balaPrefab, shotPoint.position, shotPoint.rotation);
         bala.GetComponent<Rigidbody>().AddForce(bala.transform.forward * shotForce, ForceMode.Impulse);
+
+        //Activamos el sistema de partículas
+        foreach (ParticleSystem ps in GetComponentsInChildren<ParticleSystem>())
+        {
+            ps.Play();
+        }
+
     }
 }
