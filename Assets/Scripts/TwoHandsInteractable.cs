@@ -23,7 +23,7 @@ public class TwoHandsInteractable : XRGrabInteractable
     {
         base.ProcessInteractable(updatePhase);
 
-        if (secondInteractor != null)
+        if (secondInteractor != null && selectingInteractor != null)
         {
             selectingInteractor.attachTransform.rotation = GetRotation();
         }
@@ -63,4 +63,13 @@ public class TwoHandsInteractable : XRGrabInteractable
     {
         base.OnSelectExited(interactor);
     }
+
+/*
+    public override bool IsSelectableBy(XRBaseInteractor interactor)
+    {
+        bool isFirstSelectable = selectingInteractor == null || interactor != selectingInteractor;
+
+        return base.IsSelectableBy(interactor) && isFirstSelectable;
+    }*/
+    
 }
