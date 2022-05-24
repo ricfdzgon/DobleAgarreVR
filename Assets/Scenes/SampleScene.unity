@@ -2400,6 +2400,36 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.15
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1763399301
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1763399302}
+  m_Layer: 6
+  m_Name: ShotPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1763399302
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763399301}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0023, y: 0.1146, z: 0.4174}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2009508718}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1793758587
 GameObject:
   m_ObjectHideFlags: 0
@@ -2657,7 +2687,19 @@ MonoBehaviour:
       m_Calls: []
   m_Activated:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2009508719}
+        m_TargetAssemblyTypeName: RifleShot, Assembly-CSharp
+        m_MethodName: Shot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_Deactivated:
     m_PersistentCalls:
       m_Calls: []
@@ -2726,3 +2768,22 @@ MonoBehaviour:
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
   secondGrabPoint: {fileID: 1534241684}
+--- !u!4 &2009508718 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3181857025771287904, guid: 6d9ee609d9f49fc489754751feaba91e, type: 3}
+  m_PrefabInstance: {fileID: 2009508714}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2009508719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009508715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04f9cbd2cf48be24e92b4ab08709fdd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  balaPrefab: {fileID: 5765374350935519798, guid: 7c220089c4303364f96fa8cf24bcebc6, type: 3}
+  shotPoint: {fileID: 1763399302}
