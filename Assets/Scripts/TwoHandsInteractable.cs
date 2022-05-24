@@ -33,7 +33,7 @@ public class TwoHandsInteractable : XRGrabInteractable
     {
         Quaternion targetRotation;
 
-        targetRotation = Quaternion.LookRotation(secondInteractor.transform.position - selectingInteractor.transform.position, secondInteractor.transform.up);
+        targetRotation = Quaternion.LookRotation(secondInteractor.transform.position - selectingInteractor.transform.position, selectingInteractor.transform.up);
 
         return targetRotation;
     }
@@ -49,17 +49,18 @@ public class TwoHandsInteractable : XRGrabInteractable
     {
         Debug.Log("Suelto la segunda mano");
         secondInteractor = null;
+
+        selectingInteractor.attachTransform.localRotation = initialRotation;
     }
 
     protected override void OnSelectEntered(XRBaseInteractor interactor)
     {
         base.OnSelectEntered(interactor);
-        initialRotation = interactor.attachTransform.rotation;
+        initialRotation = interactor.attachTransform.localRotation;
     }
 
     protected override void OnSelectExited(XRBaseInteractor interactor)
     {
         base.OnSelectExited(interactor);
-        interactor.attachTransform.rotation = initialRotation;
     }
 }
