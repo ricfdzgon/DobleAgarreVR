@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject bolaPrefab;
+
+    public InputAction TargetGenerationAction;
     void Start()
     {
+        TargetGenerationAction.performed += TargetGenerationActionPerformed;
+        TargetGenerationAction.Enable();
         GenerateTargets();
     }
 
@@ -21,5 +26,10 @@ public class GameManager : MonoBehaviour
         {
             Instantiate(bolaPrefab);
         }
+    }
+
+    void TargetGenerationActionPerformed(InputAction.CallbackContext ctxt)
+    {
+        GenerateTargets();
     }
 }
