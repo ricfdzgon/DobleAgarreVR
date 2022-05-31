@@ -64,12 +64,12 @@ public class TwoHandsInteractable : XRGrabInteractable
         base.OnSelectExited(interactor);
     }
 
-/*
+
     public override bool IsSelectableBy(XRBaseInteractor interactor)
     {
-        bool isFirstSelectable = selectingInteractor == null || interactor != selectingInteractor;
+        bool b = selectingInteractor && !interactor.Equals(selectingInteractor);
 
-        return base.IsSelectableBy(interactor) && isFirstSelectable;
-    }*/
-    
+        return base.IsSelectableBy(interactor) && !b;
+    }
+
 }
