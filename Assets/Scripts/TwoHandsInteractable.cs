@@ -61,6 +61,7 @@ public class TwoHandsInteractable : XRGrabInteractable
 
     protected override void OnSelectExited(XRBaseInteractor interactor)
     {
+        interactor.attachTransform.localRotation = initialRotation;
         base.OnSelectExited(interactor);
     }
 
